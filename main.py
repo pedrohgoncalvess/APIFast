@@ -16,6 +16,12 @@ def getSession():
 
 bigam = FastAPI()
 
+
+@bigam.post("/lead/{lead}")
+async def insertLead(lead):
+    return print(lead)
+
+
 @bigam.get("/")
 def getItems(session: Session = Depends(getSession)):
     items = session.query(models.Item).all()
