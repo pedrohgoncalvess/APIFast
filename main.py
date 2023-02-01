@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Body, Depends
+from fastapi import FastAPI, Body, Depends, Request
 from database import Base,SessionLocal,engine
 from sqlalchemy.orm import Session
 import schemas
@@ -18,8 +18,12 @@ bigam = FastAPI()
 
 
 @bigam.post("/item")
-async def insertLead(lead:schemas.Lead):
-    return lead
+async def getInformation(lead : Request):
+    req_info = await lead.json()
+    return {
+        "status" : "SUCCESS",
+        "data" : req_info
+    }
 
 
 @bigam.get("/")

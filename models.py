@@ -10,4 +10,5 @@ class Item(Base):
 class Lead(Base):
     __tablename__ = 'leads'
     id = Column(Integer, primary_key = True)
-    lead = Column(String(256))
+    lead_name = Column(String(100))
+    lead = Column(String(500))
