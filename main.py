@@ -20,10 +20,12 @@ bigam = FastAPI()
 @bigam.post("/item")
 async def getInformation(lead : Request):
     req_info = await lead.json()
+    print(req_info)
     return {
         "status" : "SUCCESS",
         "data" : req_info
     }
+
 
 
 @bigam.get("/")
