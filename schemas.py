@@ -6,3 +6,4 @@ class Item(BaseModel):
 
 class Lead(BaseModel):
     id:int
+    lead:str

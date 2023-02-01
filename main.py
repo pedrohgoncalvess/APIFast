@@ -17,9 +17,9 @@ def getSession():
 bigam = FastAPI()
 
 
-@bigam.post("/lead/{lead}")
-async def insertLead(lead):
-    return print(lead)
+@bigam.post("/item")
+async def insertLead(lead:schemas.Lead):
+    return lead
 
 
 @bigam.get("/")
