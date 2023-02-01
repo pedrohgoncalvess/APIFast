@@ -9,4 +9,4 @@ class Item(Base):
 
 class Lead(Base):
     __tablename__ = 'leads'
-    id = Column(Integer)
+    id = Column(Integer, primary_key = True)
